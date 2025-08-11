@@ -2,8 +2,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    // Ensure dark mode is always active
+    document.documentElement.classList.add("dark");
+  }, []);
   return (
     <>
       <Toaster />
